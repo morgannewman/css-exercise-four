@@ -1,63 +1,51 @@
-body {
-  background-color: #ffffff;
-  font-size: 10px;
-  display: block;
-  float: inherit;
-  margin: 0 auto;
+*, ::after, ::before {
+  box-sizing: border-box;
 }
 
-div {
+body {
   background-color: #dadada;
-  width: 50%;
-  height: 300px;
-  margin: 0 auto;
-  margin-bottom: 10px;
+  font-size: 10px;
 }
 
 .container {
-  width: 70%;
-  display: block;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 0px;
-  overflow: hidden;
 }
 
 img {
-  min-width: 300px;
-  min-height: 300px;  
+  object-fit: cover;
+  width: 100%;
+  page-break-inside: avoid;
 }
 
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
+.row {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
-h1 {
-  text-align: center;
-  padding: 15px;
-  font-size: 2em;
-  font-family: sans-serif;
-  color: #000;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+.preview {
+  padding: 16px;
+  flex-basis: 100%;
 }
 
-div > h1 {
-  font-family: serif;
-  text-align: left;
-  text-transform: capitalize;
-  letter-spacing: normal;
-  color: #000;
-}
+@media screen and (min-width: 768px) {
+  .row {
+    flex-wrap: wrap;
+  }
 
-/* this is for tablets */
-@media screen and (min-width: 575px) {
+  .preview {
+    flex-basis: 50%;
   }
 }
 
-/* this is for laptops */
-@media screen and (min-width: 991px) {
+@media screen and (min-width: 1024px) {
+  .row {
+    flex-wrap: nowrap;
+  }
+
+  .preview {
+    float: left;
+    width: 25%;
   }
 }
